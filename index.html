@@ -31,8 +31,9 @@
             box-sizing: border-box;
         }
 
+        /* Fundo geral da página alterado para o tom bege #f5efe2 */
         body {
-            background-color: var(--marsala);
+            background-color: var(--bege-fundo);
             color: var(--texto-escuro);
             font-family: var(--fonte-sans);
             display: flex;
@@ -47,13 +48,14 @@
             width: 100%;
             max-width: 750px;
             background-color: var(--bege-fundo);
-            box-shadow: 0 15px 50px rgba(0,0,0,0.4);
+            box-shadow: 0 15px 50px rgba(119, 17, 25, 0.12);
             border-radius: 4px;
             overflow: hidden;
+            border: 1px solid rgba(119, 17, 25, 0.1);
         }
 
         /* =================================================
-           1. FOTO PRINCIPAL (HERO)
+           1. FOTO PRINCIPAL INICIAL (HERO)
            ================================================= */
         .hero-section {
             width: 100%;
@@ -68,7 +70,7 @@
         }
 
         /* =================================================
-           2. CONVITE CLÁSSICO COM MOLDURA (APÓS A FOTO)
+           2. CONVITE CLÁSSICO COM MOLDURA E FLOR.PNG
            ================================================= */
         .card-container {
             margin: 35px 20px;
@@ -96,10 +98,12 @@
             text-transform: uppercase;
         }
 
-        .botanical-illustration {
-            width: 80px;
+        /* IMAGEM DA FLOR */
+        .botanical-image {
+            width: 70px;
             height: auto;
             display: block;
+            filter: invert(13%) sepia(85%) saturate(3674%) hue-rotate(338deg) brightness(88%) contrast(98%);
         }
 
         .main-title {
@@ -159,7 +163,7 @@
         }
 
         /* =================================================
-           3. CONTAGEM REGRESSIVA E DETALHES DO EVENTO
+           3. DETALHES DO EVENTO & CONTAGEM REGRESSIVA
            ================================================= */
         .section-details {
             padding: 10px 30px 35px 30px;
@@ -194,6 +198,23 @@
             letter-spacing: 1px;
             margin-top: 4px;
             opacity: 0.85;
+        }
+
+        /* =================================================
+           NOVA SEÇÃO DE IMAGEM APÓS A CONTAGEM
+           ================================================= */
+        .photo-gallery-section {
+            width: 100%;
+            margin: 20px 0 35px 0;
+            line-height: 0;
+            border-top: 2px solid rgba(119, 17, 25, 0.15);
+            border-bottom: 2px solid rgba(119, 17, 25, 0.15);
+        }
+
+        .photo-gallery-section img {
+            width: 100%;
+            height: auto;
+            display: block;
         }
 
         .event-info-box {
@@ -263,7 +284,6 @@
             transition: all 0.3s ease;
         }
 
-        /* Botão 1: RSVP / WhatsApp com checklist */
         .btn-whatsapp {
             background-color: var(--marsala);
             color: var(--bege-fundo);
@@ -274,7 +294,6 @@
             background-color: #5b0d13;
         }
 
-        /* Botão 2: Lista de Presentes */
         .btn-gifts {
             background-color: transparent;
             color: var(--marsala);
@@ -286,7 +305,6 @@
             color: var(--bege-fundo);
         }
 
-        /* Botão 3: Endereço no Maps (Verde Escuro) */
         .btn-maps {
             background-color: var(--verde-escuro);
             color: var(--bege-fundo);
@@ -307,7 +325,6 @@
             letter-spacing: 2px;
         }
 
-        /* Responsividade para telas de celulares menores */
         @media (max-width: 550px) {
             .card-container {
                 border-width: 8px;
@@ -333,8 +350,8 @@
                 letter-spacing: 2px;
             }
 
-            .botanical-illustration {
-                width: 60px;
+            .botanical-image {
+                width: 55px;
             }
 
             .countdown-box {
@@ -352,44 +369,19 @@
 
     <div class="page-wrapper">
         
-        <!-- 1. FOTO DO CASAL (TOPO) -->
+        <!-- 1. FOTO PRINCIPAL INICIAL DO CASAL -->
         <div class="hero-section">
             <img src="Black White Photo Collage Minimalist Elegant Save The Date Card(2).png" alt="Bruna e Lucas">
         </div>
 
-        <!-- 2. REPRODUÇÃO FIEL DA FOTO DO CONVITE RETANGULAR -->
+        <!-- 2. REPRODUÇÃO DO CONVITE RETANGULAR COM A FLOR.PNG -->
         <div class="card-container">
             
             <div class="header-date-section">
                 <span class="date-text">ABR 17</span>
                 
-                <!-- Ilustração Botânica SVG Vetorial em Marsala -->
-                <svg class="botanical-illustration" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <g stroke="#771119" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round">
-                        <circle cx="53" cy="48" r="6" fill="#f5efe2"/>
-                        <path d="M53 36 C50 40, 44 42, 45 47 C42 45, 38 49, 41 53 C38 56, 42 61, 47 59 C48 64, 55 64, 57 59 C62 60, 65 56, 62 51 C66 48, 62 42, 57 44 C56 40, 52 38, 53 36 Z" fill="#f5efe2"/>
-                        
-                        <path d="M42 35 C38 25, 28 28, 32 40 C35 34, 40 33, 42 35 Z" fill="#771119"/>
-                        <path d="M62 38 C68 28, 76 32, 72 42 C68 36, 64 37, 62 38 Z" fill="#771119"/>
-                        <path d="M35 55 C25 58, 26 68, 38 64 C30 61, 32 57, 35 55 Z" fill="#771119"/>
-                        
-                        <path d="M35 48 Q 25 45 20 40"/>
-                        <circle cx="20" cy="40" r="2.5" fill="#771119"/>
-                        <circle cx="23" cy="34" r="2" fill="#771119"/>
-                        <circle cx="16" cy="44" r="2" fill="#771119"/>
-                        
-                        <path d="M36 68 C30 75, 20 70, 24 60 C30 60, 34 62, 36 68 Z" fill="#f5efe2"/>
-                        <circle cx="27" cy="65" r="0.6" fill="#771119"/>
-                        <circle cx="30" cy="67" r="0.6" fill="#771119"/>
-                        <circle cx="26" cy="69" r="0.6" fill="#771119"/>
-
-                        <path d="M54 62 Q 55 75 56 82"/>
-                        <path d="M56 82 Q 52 86 48 88"/>
-                        <circle cx="48" cy="88" r="2" fill="#771119"/>
-                        <circle cx="53" cy="90" r="1.8" fill="#771119"/>
-                        <circle cx="58" cy="86" r="1.8" fill="#771119"/>
-                    </g>
-                </svg>
+                <!-- Imagem flor.png -->
+                <img src="flor.png" alt="Flor" class="botanical-image" onerror="this.style.display='none'">
 
                 <span class="date-text">2027</span>
             </div>
@@ -408,9 +400,6 @@
 
             <div class="divider-line"></div>
 
-            <div class="button-section">
-                <a href="#detalhes" class="btn-save-the-date">SAVE THE DATE</a>
-            </div>
 
         </div>
 
@@ -436,6 +425,12 @@
                 </div>
             </div>
 
+            <!-- NOVA SEÇÃO PARA A SEGUNDA IMAGEM -->
+            <div class="photo-gallery-section">
+                <!-- Substitua 'sua-segunda-foto.png' pelo nome da sua segunda imagem -->
+                <img src="manual-convidade.png" alt="Foto do Casal">
+            </div>
+
             <div class="event-info-box">
                 <div class="info-group">
                     <i class="fa-regular fa-clock"></i>
@@ -457,7 +452,7 @@
 
             <!-- 4. BOTÕES DE AÇÃO -->
             <div class="action-buttons">
-                <!-- Botão 1: Confirmar Presença via WhatsApp (com ícone checklist) -->
+                <!-- Botão 1: Confirmar Presença via WhatsApp -->
                 <a href="https://wa.me/5500000000000?text=Olá!%20Gostaria%20de%20confirmar%20minha%20presença%20no%20casamento%20de%20Bruna%20e%20Lucas." target="_blank" class="btn-action btn-whatsapp">
                     <i class="fa-solid fa-list-check"></i>
                     Confirmar Presença (RSVP)
@@ -469,7 +464,7 @@
                     Lista de Presentes
                 </a>
 
-                <!-- Botão 3: Endereço no Google Maps (em Verde Escuro) -->
+                <!-- Botão 3: Endereço no Google Maps -->
                 <a href="https://maps.google.com/?q=Rua+Major+José+Lopes,+11+-+Jardim+Shangrilá" target="_blank" class="btn-action btn-maps">
                     <i class="fa-solid fa-map-location-dot"></i>
                     Como Chegar (Google Maps)
@@ -486,7 +481,7 @@
 
     <!-- Script para atualizar a Contagem Regressiva -->
     <script>
-        const targetDate = new Date("April 17, 2026 15:00:00").getTime();
+        const targetDate = new Date("April 17, 2027 15:00:00").getTime();
 
         function updateCountdown() {
             const now = new Date().getTime();
